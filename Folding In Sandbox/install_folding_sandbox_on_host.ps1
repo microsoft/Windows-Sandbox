@@ -2,9 +2,12 @@
 $ProgressPreference = 'SilentlyContinue' #Progress bar makes things way slower
 
 #Check Sandbox is enabled, only thing that requires administrator permissions
-Write-Output 'Checking that Windows Sandbox is installed...'
-If((Get-WindowsOptionalFeature -FeatureName 'Containers-DisposableClientVM' -Online).length -ne 1) {
+Write-Output 'Checking to see if Windows Sandbox is already installed...'
+If((Get-WindowsOptionalFeature -FeatureName 'Containers-DisposableClientVM' -Online).State -eq 'Enabled') {
+	Write-Output 'Windows Sandbox is not installed, installing (will require reboot)...'
 	Enable-WindowsOptionalFeature -FeatureName 'Containers-DisposableClientVM' -All -Online
+} else {
+	Write-Output 'Windows Sandbox is already enabled.'
 }
 
 #Get the latest version of folding
