@@ -24,12 +24,13 @@ Provided in this project is an install script you can run on your host computer 
     - Sets init.cmd as the logon script to be run after initialization of the sandbox
 5. Starts Windows Sandbox using the .wsb configuration file.
 
+**Note:** Due to increased interest from the community with the COVID-19 outbreak, the Folding@Home assignment servers are under a lot of pressure. It may take some time to receive a work unit so make sure to leave the client running while waiting for an assignment.
+
 ## Contents
 
 | File/folder       | Description                                |
 |-------------------|--------------------------------------------|
 | `install_folding_sandbox_on_host.ps1`             | All-in-one install & run script for Folding in Sandbox                        |
-|
 
 ## Prerequisites
 
