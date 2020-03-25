@@ -15,7 +15,7 @@ Use Windows Sandbox to develop a Hyper-V isolated environment dedicated to the [
 Provided in this project is an install script you can run on your host computer that will:
 
 1. Check Windows Sandbox is enabled on the host. If it is not, the script will enable it (restart required).
-    - Note that Windows Sandbox is only supported on Windows 10 Pro or Enterprise Insider build 18305 or newer. More info available [here](https://techcommunity.microsoft.com/t5/windows-kernel-internals/windows-sandbox/ba-p/301849).
+    - Note that Windows Sandbox is only supported on Windows 10 Pro or Enterprise Insider build 18362 or newer. More info available [here](https://techcommunity.microsoft.com/t5/windows-kernel-internals/windows-sandbox/ba-p/301849).
 2. Download the latest Folding@Home installer for Windows.
 3. Generate the Folding@Home configuration file. This contains some default configurations that allow Folding@Home in the sandbox to start immediately.
 4. Create the init.cmd script to be run within the sandbox. This script runs the Folding@Home installer in silent mode and then starts Folding@Home in a temporary working directory.
