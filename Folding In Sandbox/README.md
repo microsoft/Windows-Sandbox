@@ -10,7 +10,7 @@ urlFragment: "update-this-to-unique-url-stub"
 
 # Folding In Sandbox
 
-Use Windows Sandbox to develop a Hyper-V isolated environment dedicated to the Folding@Home client. Configure Windows Sandbox to automatically install the client and test a multitude of different Folding@Home features. 
+Use Windows Sandbox to develop a Hyper-V isolated environment dedicated to the [Folding@Home](https://foldingathome.org/) client. Configure Windows Sandbox to automatically install the client and test a multitude of different Folding@Home features. 
 
 Provided in this project is an install script you can run on your host computer that will:
 
@@ -54,4 +54,4 @@ Finding the cure for a disease is a complex process formed through a series of l
 
 Modern technology has enabled us to rapidly characterize the chemical composition of proteins. This, however, only gives us half the picture in understanding how a protein function. Once a chain of amino acids develops, it does not form a protein until it collapses into its functional state. The transition into this state is called folding and is dependent on both the type and sequence of amino acids that make up the protein. The complexity of this crucial process poses a massive computational challenge that the world is just starting to solve.
 
-Folding@Home is one of the largest efforts to solve the computational problem of protein folding. It utilizes a globally distributed network of computers - whether it be your own home computer or a server living in a data center. It can be installed by anyone anywhere and contributes to the greater cause of understanding how certain diseases work, and what we can do to minimize their impact. Right now, the group is managing an effort to simulate the dynamics of COVID-19 proteins in the search for new therapeutic solutions. For more information, be sure to visit the Folding@Home Knowledge Base.
+[Folding@Home](https://foldingathome.org/) is one of the largest efforts to solve the computational problem of protein folding. It utilizes a globally distributed network of computers - whether it be your own home computer or a server living in a data center. It can be installed by anyone anywhere and contributes to the greater cause of understanding how certain diseases work, and what we can do to minimize their impact. Right now, the group is [managing an effort](https://foldingathome.org/2020/03/15/coronavirus-what-were-doing-and-how-you-can-help-in-simple-terms/) to simulate the dynamics of COVID-19 proteins in the search for new therapeutic solutions. For more information, be sure to visit the [Folding@Home Knowledge Base](https://foldingathome.org/dig-deeper/).
