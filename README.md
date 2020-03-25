@@ -5,7 +5,6 @@ languages:
 products:
 - Windows Sandbox
 description: "Public repository for helpful Windows Sandbox scripts and utilites"
-urlFragment: "update-this-to-unique-url-stub"
 ---
 
 # Windows Sandbox Utilites
