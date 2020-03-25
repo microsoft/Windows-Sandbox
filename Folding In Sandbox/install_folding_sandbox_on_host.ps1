@@ -1,16 +1,21 @@
 ﻿#Requires -RunAsAdministrator
 $ProgressPreference = 'SilentlyContinue' #Progress bar makes things way slower
 
-#Check Sandbox is enabled, only thing that requires administrator permissions
-Write-Output 'Checking that Windows Sandbox is installed...'
 #Check if virtualization is enbaled in BIOS
+Write-Output 'Checking that virtualization is enabled in BIOS.'
 if((Get-WmiObject Win32_ComputerSystem).HypervisorPresent -eq $true){
-    If((Get-WindowsOptionalFeature -FeatureName 'Containers-DisposableClientVM' -Online).length -eq 1) {
-	    Enable-WindowsOptionalFeature -FeatureName 'Containers-DisposableClientVM' -All -Online
-    }
+	#Check Sandbox is enabled
+	Write-Output 'Checking to see if Windows Sandbox is already installed...'
+    If((Get-WindowsOptionalFeature -FeatureName 'Containers-DisposableClientVM' -Online).State -ne 'Enabled') {
+		Write-Output 'Windows Sandbox is not installed, installing (will require reboot)...'
+		Enable-WindowsOptionalFeature -FeatureName 'Containers-DisposableClientVM' -All -Online
+		exit
+	} else {
+		Write-Output 'Windows Sandbox is already enabled.'
+	}
 }else{
-Write-Output 'Please Enable Virtualization capabilities in your BIOS settings...'
-exit
+	Write-Output 'Please Enable Virtualization capabilities in your BIOS settings...'
+	exit
 }
 
 #Get the latest version of folding

@@ -25,7 +25,11 @@ Outline the file contents of the repository. It helps users navigate the codebas
 
 ## Prerequisites
 
-A host computer running Windows 10 Pro or Enterprise Insider build 18362 or newer is currently needed to run Windows Sandbox.
+A host computer running Windows 10 Pro or Enterprise Insider build 18362 or newer is currently needed to run Windows Sandbox. In addition to this you must ensure that virtualization is enabled on your machine:
+- If you are using a physical machine, ensure virtualization capabilities are enabled in the BIOS.
+- If you are using a virtual machine, enable nested virtualization with this PowerShell cmdlet:
+    
+    ```Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true```
 
 ## Contributing
 
