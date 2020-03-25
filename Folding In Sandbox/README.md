@@ -33,11 +33,17 @@ Provided in this project is an install script you can run on your host computer 
 
 ## Prerequisites
 
-The [install_folding_sandbox_on_host.ps1](install_folding_sandbox_on_host.ps1) script, and a host computer running Windows 10 Pro or Enterprise Insider build 18362 or newer should be all you need to get started. This script does require administrative permissions, purely so it can check for and enable Windows Sandbox automatically.
+The [install_folding_sandbox_on_host.ps1](install_folding_sandbox_on_host.ps1) script, and a host computer running Windows 10 Pro or Enterprise Insider build 18362 or newer should be all you need to get started. This script does require administrative permissions, purely so it can check for and enable Windows Sandbox automatically. 
 
 ## Setup
 
-The [install_folding_sandbox_on_host.ps1](install_folding_sandbox_on_host.ps1) script will enable Windows Sandbox for you, so the only thing you'll need to do is reboot when asked to.
+You must first ensure that virtualization is enabled on your machine:
+- If you are using a physical machine, ensure virtualization capabilities are enabled in the BIOS.
+- If you are using a virtual machine, enable nested virtualization with this PowerShell cmdlet:
+    
+    ```Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true```
+
+The [install_folding_sandbox_on_host.ps1](install_folding_sandbox_on_host.ps1) script will enable Windows Sandbox for you, so the only thing you'll need to do from here is reboot when asked to.
 
 ## Running the sample
 
