@@ -48,9 +48,12 @@ The [install_folding_sandbox_on_host.ps1](install_folding_sandbox_on_host.ps1) s
 ## Running the sample
 
 To run the script, open command prompt or powershell as an administrator and enter the following:
-```
-Powershell.exe -ExecutionPolicy Bypass -File .\install_folding_sandbox_on_host.ps1
-```
+
+```Powershell.exe -ExecutionPolicy Bypass -File .\install_folding_sandbox_on_host.ps1```
+
+If you want to pass in your username you can add the -username option:
+
+```Powershell.exe -ExecutionPolicy Bypass -File .\install_folding_sandbox_on_host.ps1 -username <your username>```
 
 And you're off! Feel free to submit work items or pull requests to this repository if you have any problems, ideas, or suggestions!
 
