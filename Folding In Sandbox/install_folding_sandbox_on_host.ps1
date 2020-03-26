@@ -4,18 +4,20 @@ $ProgressPreference = 'SilentlyContinue' #Progress bar makes things way slower
 # Ensure that virtualization is enbaled in BIOS.
 Write-Output 'Verifying that virtualization is enabled in BIOS...'
 if ((Get-WmiObject Win32_ComputerSystem).HypervisorPresent -eq $false) {
-	Write-Output 'Please Enable Virtualization capabilities in your BIOS settings...'
+	Write-Output 'ERROR: Please Enable Virtualization capabilities in your BIOS settings...'
 	exit
 }
 
 # Determine if Windows Sandbox is enabled.
-Write-Output 'Checking to see if Windows Sandbox is already installed...'
+Write-Output 'Checking to see if Windows Sandbox is installed...'
 If ((Get-WindowsOptionalFeature -FeatureName 'Containers-DisposableClientVM' -Online).State -ne 'Enabled') {
 	Write-Output 'Windows Sandbox is not installed, attempting to install it (may require reboot)...'
 	if ((Enable-WindowsOptionalFeature -FeatureName 'Containers-DisposableClientVM' -All -Online -NoRestart).RestartNeeded) {
 		Write-Output 'Please reboot to finish installing Windows Sandbox, then re-run this script...'
 		exit
 	}
+} else {
+	Write-Ouput 'Windows Sandbox already installed.' 
 }
 
 # Download the latest version of FAH.
