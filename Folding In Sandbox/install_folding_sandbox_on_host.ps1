@@ -14,6 +14,7 @@ If ((Get-WindowsOptionalFeature -FeatureName 'Containers-DisposableClientVM' -On
 	Write-Output 'Windows Sandbox is not installed, attempting to install it (may require reboot)...'
 	if ((Enable-WindowsOptionalFeature -FeatureName 'Containers-DisposableClientVM' -All -Online -NoRestart).RestartNeeded) {
 		Write-Output 'Please reboot to finish installing Windows Sandbox, then re-run this script...'
+		exit
 	}
 }
 
