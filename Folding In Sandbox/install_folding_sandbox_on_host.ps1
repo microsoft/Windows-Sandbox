@@ -17,7 +17,7 @@ If ((Get-WindowsOptionalFeature -FeatureName 'Containers-DisposableClientVM' -On
 		exit
 	}
 } else {
-	Write-Ouput 'Windows Sandbox already installed.' 
+	Write-Output 'Windows Sandbox already installed.' 
 }
 
 # Download the latest version of FAH.
