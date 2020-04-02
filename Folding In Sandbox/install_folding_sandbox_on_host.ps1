@@ -27,7 +27,7 @@ $installer_url = 'https://download.foldingathome.org/releases/public/release/fah
 # Use regex to get the latest version from the FAH website.
 $version = ((Invoke-WebRequest -Uri $installer_url -UseBasicParsing).Links | Where-Object  {$_.href -match '^v\d+([.]\d+)?'} | ForEach-Object {[float]($_.href -replace '[^.\d]', '')} | Measure-Object -Max).Maximum
 $installer = "$($installer_url)v$($version)/latest.exe"
-$installer_size =(Invoke-WebRequest $installer -Method Head).Headers.'Content-Length'
+$installer_size =(Invoke-WebRequest $installer -Method Head -UseBasicParsing).Headers.'Content-Length'
 Write-Output "Using FAH v$version."
 
 # Check if the installer is present, download otherwise.
