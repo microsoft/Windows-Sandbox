@@ -95,7 +95,7 @@ Write-Output "Creating sandbox configuration file to $sandbox_conf"
 New-Item -Force -Path $sandbox_conf -ItemType File
 Set-Content -Path $sandbox_conf -Value @"
 <Configuration>
-	<VGpu>Default</VGpu>
+	<VGpu>Enable</VGpu>
 	<MappedFolders>
 		<MappedFolder>
 			<HostFolder>$working_dir</HostFolder>
