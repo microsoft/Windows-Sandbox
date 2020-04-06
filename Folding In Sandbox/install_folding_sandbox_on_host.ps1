@@ -1,4 +1,7 @@
-#Requires -RunAsAdministrator
+﻿#Requires -RunAsAdministrator
+
+#For a custom username, add -username <your username> to the command execution
+param([string]$username='wsandbox_anon')
 $ProgressPreference = 'SilentlyContinue' #Progress bar makes things way slower
 
 # Ensure that virtualization is enbaled in BIOS.
@@ -48,11 +51,14 @@ Write-Output "Saved Folding@Home configuration file to $working_dir\$conf_file"
 New-Item -Force -Path "$working_dir\$conf_file" -ItemType File
 Set-Content -Path "$working_dir\$conf_file" -Value @"
 <config>
-  <user value='wsandbox_anon'/>
-  <team value='251561'/>
-  <smp value='true'/>
-  <gpu value='true'/>
-  <open-web-control>true</open-web-control>
+  <user v='$username'/>
+  <team v='251561'/>
+  <core-priority v='low'/>
+  <power v='full' />
+  <priority v='realtime'/>
+  <smp v='true'/>
+  <gpu v='true'/>
+  <open-web-control v='true'/>
 </config>
 "@
 
