@@ -1,12 +1,15 @@
 ﻿#Requires -RunAsAdministrator
 
 #For a custom username, add -username <your username> to the command execution
-param([string]$username='wsandbox_anon')
+param(
+  [string]$username = 'wsandbox_anon',
+  [string]$team     = '251561'
+)
 $ProgressPreference = 'SilentlyContinue' #Progress bar makes things way slower
 
 # Ensure that virtualization is enbaled in BIOS.
 Write-Output 'Verifying that virtualization is enabled in BIOS...'
-if ((Get-WmiObject Win32_ComputerSystem).HypervisorPresent -eq $false) {
+if ((Get-CimInstance Win32_ComputerSystem).HypervisorPresent -eq $false) {
 	Write-Output 'ERROR: Please Enable Virtualization capabilities in your BIOS settings...'
 	exit
 }
@@ -20,7 +23,7 @@ If ((Get-WindowsOptionalFeature -FeatureName 'Containers-DisposableClientVM' -On
 		exit
 	}
 } else {
-	Write-Output 'Windows Sandbox already installed.' 
+	Write-Output 'Windows Sandbox already installed.'
 }
 
 # Download the latest version of FAH.
@@ -52,7 +55,7 @@ New-Item -Force -Path "$working_dir\$conf_file" -ItemType File
 Set-Content -Path "$working_dir\$conf_file" -Value @"
 <config>
   <user v='$username'/>
-  <team v='251561'/>
+  <team v='$team'/>
   <core-priority v='low'/>
   <power v='full' />
   <priority v='realtime'/>
@@ -62,13 +65,13 @@ Set-Content -Path "$working_dir\$conf_file" -Value @"
 </config>
 "@
 
-<# 
+<#
 Create the script that runs at logon. This script:
 	1. Starts the installer
 	2. Creates a volatile working directory
 	3. Copies the config into the working directory
 	4. Sets the firewall policies to let FAH run
-	5. Starts the FAH client 
+	5. Starts the FAH client
 #>
 Write-Output 'Creating init command...'
 $logon_cmd = "$working_dir\init.cmd"
