@@ -29,32 +29,11 @@ Provided in this project is an install script you can run on your host computer 
 
 | File/folder       | Description                                |
 |-------------------|--------------------------------------------|
-| `FAHSandbox.psm1`             | Module manifest file                        |
-| `FAHSandbox.psd1`             | Module data file                        |
-| `Public\Start.ps1`             | Public entry to the module                        |
-| `Private\CreateFAHConf.ps1`             | Private functioin to create the FAH configuration file                        |
-| `Private\CreateLogonScript.ps1`             | Private function to create the script that runs at logon                        |
-| `Private\GetFAH.ps1`             | Private function to download the latest version of FAH                        |
-| `Private\VerifyBios.ps1`             | Private function is used to ensure that virtualization is enbaled in BIOS.                        |
-| `Private\VerifySandbox.ps1`             | Private function is used to ensure that Windows Sandbox has been enabled                        |
+| `install_folding_sandbox_on_host.ps1`             | All-in-one install & run script for Folding in Sandbox                        |
 
 ## Prerequisites
 
-Import the module by downloading from this repository, then running: -
-```
-cls; 
-Remove-Variable * -ErrorAction SilentlyContinue; 
-Remove-Module *; 
-$error.Clear();
-Import-Module "E:\GitHub\Windows-Sandbox-Utilities\Folding In Sandbox\FAHSandbox.psm1" -Prefix MS;
-```
-
-You can then run the module by running: -
-```
-MSStart;
-```
-
-You can pass in a username and/or team to the Start function if you do not want to use the defaults.
+The [install_folding_sandbox_on_host.ps1](install_folding_sandbox_on_host.ps1) script, and a host computer running Windows 10 Pro or Enterprise Insider build 18362 or newer should be all you need to get started. This script does require administrative permissions, purely so it can check for and enable Windows Sandbox automatically. 
 
 ## Setup
 
@@ -63,6 +42,20 @@ You must first ensure that virtualization is enabled on your machine:
 - If you are using a virtual machine, enable nested virtualization with this PowerShell cmdlet:
     
     ```Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true```
+
+The [install_folding_sandbox_on_host.ps1](install_folding_sandbox_on_host.ps1) script will enable Windows Sandbox for you, so the only thing you'll need to do from here is reboot when asked to.
+
+## Running the sample
+
+To run the script, open command prompt or powershell as an administrator and enter the following:
+
+```Powershell.exe -ExecutionPolicy Bypass -File .\install_folding_sandbox_on_host.ps1```
+
+If you want to pass in your username you can add the -username option:
+
+```Powershell.exe -ExecutionPolicy Bypass -File .\install_folding_sandbox_on_host.ps1 -username <your username>```
+
+And you're off! Feel free to submit work items or pull requests to this repository if you have any problems, ideas, or suggestions!
 
 ## Key concepts
 
