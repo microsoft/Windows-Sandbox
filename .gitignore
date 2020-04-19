@@ -3,6 +3,10 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+#Repo Specific
+Install\ With\ Chocolatey/mapped/
+Install\ With\ Chocolatey/*.wsb
+
 # User-specific files
 *.rsuser
 *.suo

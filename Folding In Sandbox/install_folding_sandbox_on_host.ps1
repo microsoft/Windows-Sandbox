@@ -60,7 +60,7 @@ If (!(test-path "$working_dir\$install_fname") -or (Get-ChildItem "$working_dir\
 }
 
 # Create the FAH configuration file with the Windows Sandbox FAH team #251561.
-Write-Output 'Creating init command...'
+Write-Output 'Creating Folding@Home configuration.'
 $conf_file = 'fah_sandbox_conf.xml'
 Write-Output "Saved Folding@Home configuration file to $working_dir\$conf_file"
 New-Item -Force -Path "$working_dir\$conf_file" -ItemType File
@@ -89,7 +89,7 @@ Write-Output 'Creating init command...'
 $logon_cmd = "$working_dir\init.cmd"
 $wdg_install_dir = 'C:\users\wdagutilityaccount\desktop\fah_conf'
 $wdg_working_dir = 'C:\users\wdagutilityaccount\desktop\fah_working_dir'
-Write-Output "Saved logon script to $logon_cmd, this will be run upon starting Sandbox."
+
 New-Item -Force -Path $logon_cmd -ItemType File
 Set-Content -Path $logon_cmd -Value @"
 start $wdg_install_dir\$install_fname /S
@@ -109,6 +109,7 @@ netsh advfirewall firewall Add rule name="FAHClient" program="C:\Program Files (
 netsh advfirewall firewall Add rule name="FAHClient" program="C:\Program Files (x86)\FAHClient\FAHClient.exe" action=allow dir=in
 start C:\"Program Files (x86)"\FAHClient\FAHClient.exe --config $wdg_working_dir\$conf_file
 "@
+Write-Output "Saved logon script to $logon_cmd, this will be run upon starting Sandbox."
 
 # Create the Sandbox configuration file with the new working dir & LogonCommand.
 $sandbox_conf = "$working_dir\fah_sandbox.wsb"
