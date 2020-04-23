@@ -6,14 +6,61 @@ This repository is a dedicated space for useful scripts and configuration files 
 
 **&#9660; Check out the list of community Sandbox repositories below! &#9660;**
 
-## Contents
-
-Outline the file contents of the repository. It helps users navigate the codebase, build configuration and any related assets.
+### Contents
 
 | File/folder       | Description                                |
 |-------------------|--------------------------------------------|
 | `Folding In Sandbox`             | Run the Folding@Home Client in Windows Sandbox                        |
 | `CONTRIBUTING.md` | Guidelines for contributing to this repository.|
+
+## Community Sandbox Repositories
+
+Here is a list of great repositories made by the community - feel free to browse through them and contribute where you can!
+
+<table>
+    <thead>
+        <tr style="border-bottom: 2px solid black">
+            <th></th>
+            <th>Name</th>
+            <th>Owner</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan=3><strong>GUI Tools</strong></td>
+            <td><a href="https://github.com/damienvanrobaeys/Windows_Sandbox_Editor">Windows Sandbox Editor</a></td>
+            <td>Damien Van Robaeys</td>
+            <td>GUI for generating and managing Windows Sandbox. <a href="http://www.systanddeploy.com/2019/07/windows-sandbox-editor-update.html">Blog post.</href></td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/damienvanrobaeys/Run-in-Sandbox">Run in Sandbox Context Menu</a></td>
+            <td>Damien Van Robaeys</td>
+            <td>Adds right-click context menus for running scripts, applications, and more in Windows Sandbox</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td rowspan=3><strong>Utilities</strong></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+    </tbody>
+</table>
 
 ## Prerequisites
 
@@ -22,16 +69,6 @@ A host computer running Windows 10 Pro or Enterprise Insider build 18362 or newe
 - If you are using a virtual machine, enable nested virtualization with this PowerShell cmdlet:
     
     ```Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true```
-
-## Community Sandbox Repositories
-
-Here is a list of great repositories made by the community - eel free to browse through them and contribute where you can!
-
-| Name | Owner | Description |
-|------|:-----:|------------:|
-|      |       |             |
-|      |       |             |
-|      |       |             |
 
 ## Contributing
 
