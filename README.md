@@ -45,9 +45,9 @@ Here is a list of great repositories made by the community - feel free to browse
         </tr>
         <tr>
             <td rowspan=3><strong>Utilities</strong></td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+            <td><a href="https://github.com/karkason/pywinsandbox">PyWinSandbox</a/></td>
+            <td>Yiftach Karkason</td>
+            <td>Python library to create and control Windwos Sandboxes with RPyC & Simple CLI Utilities.</td>
         </tr>
         <tr>
             <td>-</td>
