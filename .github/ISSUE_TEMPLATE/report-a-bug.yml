@@ -1,0 +1,70 @@
+name: "Report a bug"
+description: Report errors or unexpected behavior
+title: "[Bug]: "
+labels: [bug]
+
+body:
+- type: markdown
+  attributes:
+    value: |
+      Please make sure to [search for existing issues](https://github.com/microsoft/Windows-Sandbox/issues) before filing a new one!
+
+- id: version
+  type: input
+  attributes:
+    label: Windows Sandbox version
+    placeholder: 
+    description: 
+  validations:
+    required: false
+    
+- id: windowsversion
+  type: input
+  attributes:
+    label: Windows build number
+    placeholder: 
+    description: |
+      Please run `ver` or `[Environment]::OSVersion`.
+  validations:
+    required: false
+
+- id: othersoftware
+  type: textarea
+  attributes:
+    label: Other software
+    description: If you're reporting a bug about our interaction with other software, what software? What versions?
+    placeholder: 
+  validations:
+    required: false
+
+- id: repro
+  type: textarea
+  attributes:
+    label: Steps to reproduce the bug
+    placeholder: Enter detailed steps to tell us what you were doing when you encountered the bug.
+  validations:
+    required: true
+
+- id: expectedbehavior
+  type: textarea
+  attributes:
+    label: Expected result
+    description: If you want to include screenshots, paste them into the markdown editor below.
+    placeholder: Tell us what you were expecting to happen.
+  validations:
+    required: false
+
+- id: actualbehavior
+  type: textarea
+  attributes:
+    label: Actual result
+    placeholder: Tell us what happened.
+  validations:
+    required: true
+
+- id: includedsysinfo
+  type: textarea
+  attributes:
+    label: Included System Information
+  validations:
+    required: false
