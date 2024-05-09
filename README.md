@@ -1,4 +1,4 @@
-# Windows Sandbox Utilites
+# Welcome to the Windows Sandbox repo!
 
 Windows Sandbox allows users to run a lightweight desktop environment in a secure Hyper-V isolated container. It creates a disposable instance of Windows that enables the ability to run any win32 application you wish with a pristine configuration every time you start it. It allows you to do virtually whatever you want within an isolated desktop environment without requiring any cleanup after the fact. Whether it be testing an unknown application or performing large computational tasks with many temporary files, Windows Sandbox makes it easy to employ a dedicated environment for whatever task is at hand.
 
