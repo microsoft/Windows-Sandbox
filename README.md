@@ -9,7 +9,7 @@ Windows Sandbox offers the following features:
 - <b>Secure:</b> Uses hardware-based virtualization for kernel isolation. It relies on the Microsoft hypervisor to run a separate kernel that isolates Windows Sandbox from the host.
 - <b>Efficient:</b> Takes a few seconds to launch, supports virtual GPU and has smart memory management that optimizes memory footprint.
 
-If you want to learn more about how Windows Sandbox works please go take a look at our [documentation](https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview).
+If you want to learn more about how Windows Sandbox, check out our [documentation](https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview).
 
 ### What is this repo for?
 
