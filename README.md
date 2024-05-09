@@ -17,7 +17,7 @@ This repository is for:
 - Links to add-ons and tools that leverage Windows Sandbox developed by Microsoft team and our awesome developer community.
 - Reporting issues or suggesting new features found when using Windows Sandbox.
 
-Please read our [Contributor's Guide](https://github.com/) for more information.
+Please read our [Contributor's Guide](https://github.com/microsoft/Windows-Sandbox/blob/master/CONTRIBUTING.md) for more information.
 
 ## Windows Sandbox Resources
 
