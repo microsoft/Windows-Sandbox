@@ -1,3 +1,5 @@
+<img src=assets/sandbox.png width="324" class="center" alt="illustration showing Windows Sandbox being secure and easy to use" >
+
 # Welcome to the Windows Sandbox repo!
 
 Windows Sandbox (WSB) provides a lightweight desktop environment to safely run applications in isolation. This feature provides a safe and secure space for testing and debugging apps, exploring unknown files, or experimenting with tools. Software installed inside the Windows Sandbox environment remains isolated from the host machine with hypervisor-based-virtualization.
