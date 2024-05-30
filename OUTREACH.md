@@ -1,3 +1,5 @@
+<img src=assets/sandbox.png width="324" class="center" alt="illustration showing Windows Sandbox being secure and easy to use" >
+
 # Get involved with Windows Sandbox!
 
 At Windows Sandbox, we are passionate about outreach and inclusivity. Our feature is designed to be accessible and beneficial for everyone, regardless of your background or level of experience. We believe in supporting young people in tech through hands-on experiences and practical learning opportunities. To stay connected and take your skills to the next level, we invite you to sign up for future events and resources. Whether you're interested in resume reviews, career counselling, Windows Sandbox hackathons, or hands-on workshops, we would love to keep in touch with you.
