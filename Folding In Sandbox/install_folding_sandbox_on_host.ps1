@@ -3,7 +3,8 @@
 #For a custom username, add -username <your username> to the command execution
 param(
   [string]$username = 'wsandbox_anon',
-  [string]$team     = '251561'
+  [string]$team     = '251561',
+  [Switch]$has_no_persistent_work_dir
 )
 $ProgressPreference = 'SilentlyContinue' #Progress bar makes things way slower
 
@@ -58,6 +59,7 @@ If (!(test-path "$working_dir\$install_fname") -or (Get-ChildItem "$working_dir\
 	New-Item -ItemType Directory -Force -Path $working_dir | Out-Null
 	Invoke-WebRequest -Uri $installer -OutFile "$working_dir\$install_fname"
 }
+New-Item -ItemType Directory -Force -Path $working_dir\fah_working_dir | Out-Null
 
 # Create the FAH configuration file with the Windows Sandbox FAH team #251561.
 Write-Output 'Creating init command...'
@@ -122,6 +124,12 @@ Set-Content -Path $sandbox_conf -Value @"
 			<HostFolder>$working_dir</HostFolder>
 			<ReadOnly>true</ReadOnly>
 		</MappedFolder>
+"@ + $(if ($has_no_persistent_work_dir) { @"
+		<MappedFolder>
+			<HostFolder>$working_dir\fah_working_dir</HostFolder>
+			<ReadOnly>false</ReadOnly>
+		</MappedFolder>
+"@} else { "" }) + @"
 	</MappedFolders>
 	<LogonCommand>
 		<Command>$wdg_install_dir\init.cmd</Command>
