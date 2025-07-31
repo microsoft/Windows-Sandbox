@@ -7,14 +7,14 @@ param(
 )
 $ProgressPreference = 'SilentlyContinue' #Progress bar makes things way slower
 
-# Ensure that virtualization is enbaled in BIOS.
+# Ensure that virtualization is enabled in BIOS.
 Write-Output 'Verifying that virtualization is enabled in BIOS...'
 if ((Get-CimInstance Win32_ComputerSystem).VirtualizationFirmwareEnabled -eq $false) {
 	Write-Output 'ERROR: Please Enable Virtualization capabilities in your BIOS settings...'
 	exit
 }
 
-# Ensure that virtualization is enbaled in Windows 10.
+# Ensure that virtualization is enabled in Windows 10.
 Write-Output 'Verifying that virtualization is enabled in Windows 10...'
 if ((Get-CimInstance Win32_ComputerSystem).HypervisorPresent -eq $false) {
 	Write-Output 'ERROR: Please Enable Hyper-V in your Control Panel->Programs and Features->Turn Windows features on or off'
@@ -34,7 +34,7 @@ try{
 		Write-Output 'Windows Sandbox already installed.' 
 	}
 }catch{
-	Write-Output 'ERROR: Please Enable Virtualization capabilities in your BIOS settings ,then re-run this script...'
+	Write-Output 'ERROR: Please Enable Virtualization capabilities in your BIOS settings, then re-run this script...'
     	exit
 }
 
