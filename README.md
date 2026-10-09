@@ -39,10 +39,15 @@ Here is a list of great repositories made by the community - feel free to browse
     </thead>
     <tbody>
         <tr>
-            <td rowspan=1><strong>GUI Tools</strong></td>
+            <td rowspan=2><strong>GUI Tools</strong></td>
             <td><a href="https://github.com/damienvanrobaeys/Run-in-Sandbox">Run in Sandbox Context Menu</a></td>
             <td>Damien Van Robaeys</td>
             <td>Adds right-click context menus for running scripts, applications, and more in Windows Sandbox</td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/yourtablecloth/TableCloth">TableCloth</a></td>
+            <td>yourtablecloth</td>
+            <td>Automates setup of security software required by Korean online banking and e-government websites inside Windows Sandbox</td>
         </tr>
         <tr>
             <td rowspan=1><strong>Utilities</strong></td>
